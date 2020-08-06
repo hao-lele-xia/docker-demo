@@ -1,0 +1,6 @@
+FROM java:8
+VOLUME /tmp
+COPY target/docker-demo-1.0.0.jar docker-demo.jar
+RUN bash -c "touch /docker-demo.jar"
+EXPOSE 123456
+ENTRYPOINT ["java","-jar","docker-demo.jar"]
